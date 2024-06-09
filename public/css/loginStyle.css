@@ -1,0 +1,140 @@
+.main_container {
+	display: grid;
+	grid-template-columns: 1.5fr 2.5fr;
+	height: 100vh;
+}
+
+.left_container {
+    display: flex; /* Cambia de grid a flexbox */
+    flex-direction: column; /* Alinea los elementos en una columna */
+    justify-content: center; /* Centra verticalmente */
+    align-items: top; /* Centra horizontalmente */
+    padding: 2rem;
+    height: 100%; /* Asegúrate de que el contenedor ocupe toda la altura disponible */
+}
+
+.right_container {
+    background-image: url("../images/campusHyo_UC.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+form {
+	padding: 0 10% 0 10%;
+}
+
+.logo_UC_container {
+	width: 100%;
+	max-width: 300px;
+	margin-bottom: 1rem;
+}
+
+.contenedor-logo{
+	display: flex;
+	justify-content: center;
+	margin: 20px;
+}
+
+.contenedor-logo img{
+	width: 30%;
+	height: auto;
+}
+
+.title_container {
+	text-align: center;
+	margin: 0px;
+}
+
+.title2_container {
+	text-align: center;
+}
+
+.subtitle_container
+{
+	text-align: left;
+	margin-top: 0.5rem;
+}
+
+.credential-box-input{
+	width: 100%;
+	margin-bottom: 0.5rem;
+	padding: 0.5rem;
+	border-radius: 4px;
+	border: 1px solid rgba(0, 0, 0, 0.507);
+	font-size: 0.9rem;
+}
+
+.credential-box-input::placeholder{
+	color: #AAA;
+    font-weight: 500;
+    line-height: 1rem;
+    letter-spacing: 0.3px;
+    margin: 0;
+}
+
+.remember_check {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;    
+	color: #000;
+	font-size: 0.90rem;
+	text-decoration: underline;
+}
+
+.form-check-input {
+    width: auto;
+    height: auto;
+}
+
+.login_button {
+	width: 100%;
+	padding: 0.5rem;
+	background: #A76307;
+	color: #FFF;
+	border: none;
+	border-radius: 4px;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.login_button:hover{
+	background: #ca872b;
+}
+
+.login_button:active{
+	font-weight: bold;
+}
+
+@media (max-width: 768px) {
+	.main_container {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto 1fr;
+	}
+
+	.right_container {
+		order: -1;
+		height: 50vh;
+	}
+
+	.contenedor-principal {
+		height: auto;
+		padding-top: 1rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.contenedor-fondo {
+		height: 40vh;
+	}
+
+	.contenedor-principal {
+		padding: 1rem;
+	}
+
+	.login_button {
+		font-size: 18px;
+	}
+}

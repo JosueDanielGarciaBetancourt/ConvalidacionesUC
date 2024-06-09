@@ -1,47 +1,57 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+@extends('layouts.layoutApp')
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+@section('title', 'Inicio de sesión')
 
-        <!-- Email Address -->
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/loginStyle.css') }}">
+@endpush
+
+@section('content')
+<div class="main_container">
+    <div class="left_container">
+        <div class="contenedor-logo">
+            <img src="{{ url('images/logo_UC.png') }}" alt="logo_UC">
+        </div>
+
+        <div class="title_container">    
+            <h1>CONVALIDACIONES EAP INGENIERÍA DE SISTEMAS E INFORMÁTICA</h1>
+        </div>        
+        
         <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            <form action="{{ route('loginPost') }}" method="POST">
+                @csrf
+                <div class="title2_container">
+                    <h4>Ingrese sus credenciales de inicio de sesión</h4>
+                </div>
+                
+                <div class="subtitle_container">    
+                    <h3>Correo electrónico</h3>
+                </div>        
+    
+                <input class="credential-box-input" type="email" id="email" name="email" required placeholder="Ingrese email">
+                
+                <div class="subtitle_container">    
+                    <h3>Contraseña</h3>
+                </div>
+
+                <input class="credential-box-input" type="password" id="password" name="password" required placeholder="Ingrese password">
+
+                <div class="remember_check">
+                    <input type="checkbox" class="form-check-input" id="remember" name="remember">
+                    <label class="form-check-label" for="remember">Mantener sesión iniciada</label>
+                </div>
+                <input type="submit" value="Acceder" class="login_button">
+                <br>
+                
+                @if ($errors->has('email'))
+                <div class="alert alert-danger">
+                    {{ $errors->first('email') }}
+                </div>
+                @endif
+            </form>
         </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
-
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+    </div>
+    
+    <div class="right_container"></div>
+</div>
+@endsection
