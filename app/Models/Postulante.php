@@ -11,6 +11,7 @@ class Postulante extends Model
     use HasFactory;
 
     protected $table = "Postulantes";
+    
     protected $primaryKey = 'idPostulante';
 
     protected $fillable = [

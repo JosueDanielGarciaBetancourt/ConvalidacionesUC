@@ -9,8 +9,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('CarrerasLocales', function (Blueprint $table) {
-            $table->string('idCarrera', 3)->primary(); //103 (Ing. Sistemas)
-            $table->string('nombreCarrera', 100);
+            $table->string('idCarreraLocal', 3)->primary(); //103 (Ing. Sistemas)
+            $table->string('nombreCarreraLocal', 100);
             $table->timestamps(); //created_at updated_at
         });
     }

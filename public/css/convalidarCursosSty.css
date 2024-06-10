@@ -51,6 +51,7 @@ input[type="text"] {
 input[type="text-autocomplete"] {
     color: #666;
     cursor: pointer;
+    font-size: 0.8rem;
 }
 
 input::placeholder {

@@ -1,7 +1,7 @@
 @extends('layouts.layoutApp')
 
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/dashboardStyle.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/dashboardStyles.css') }}">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     @stack('styles')

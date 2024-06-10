@@ -7,7 +7,7 @@
     <title>Convalidaciones EAP ISI | @yield('title', '')</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&display=swap">
-    <link rel="stylesheet" href="{{ asset('css/appStyl.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/appStyle.css') }}">
     @stack('styles')
 </head>
 <body>

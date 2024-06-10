@@ -3,7 +3,7 @@
 @section('title', 'Ventas Intermediadas')
 
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/convalidarCursosStyle.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/convalidarCursosSty.css') }}">
 @endpush
 
 @section('main-content')
