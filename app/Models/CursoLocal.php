@@ -8,11 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class CursoLocal extends Model
 {
     use HasFactory;
+    
+    public $incrementing = false;
 
     protected $table = 'CursosLocales';
     
-    protected $primaryKey = 'idCursoLocal';
-
+    protected $primaryKey = ['idCursoLocal', 'idMalla']; 
+    
     protected $fillable = [
         'idCursoLocal',
         'idMalla',
@@ -22,5 +24,7 @@ class CursoLocal extends Model
         'horasPracticasCursoLocal',
         'creditosCursoLocal',
         'tipoCursoLocal',
+        'sumillaSilabo_CursoLocalMalla',
+        'rutaSilaboPDF_CursoLocalMalla',
     ];
 }
