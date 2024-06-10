@@ -21,11 +21,15 @@
             </div>
             <div class="col">
               <h4>Institución</h4>
-              <label class="bordered_label">Universidad Nacional del Centro del Perú</label>
+              <select class="selectable">
+                <option value="UPLA">UPLA</option>
+                <option value="UNCP">UNCP</option>
+                <option value="UTP">UTP</option>
+              </select>
             </div>
             <div class="col">
               <h4>Carrera Procedencia</h4>
-              <label class="bordered_label">Ingenería Eléctrica</label>
+              <input type="text" placeholder="Ingresar carrera">
             </div>
           </div>
           <div class="row">
@@ -55,37 +59,8 @@
         </div>
 
         <div class="row">
-          <table>
-            <thead>
-                <tr>
-                    <th>CÓDIGO</th>
-                    <th>ASIGNATURAS</th>
-                    <th>H.T.</th>
-                    <th>H.P.</th>
-                    <th>CRÉDITOS</th>
-                    <th>TIPO</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>CS101</td>
-                    <td>Introducción a la Computación</td>
-                    <td>4</td>
-                    <td>2</td>
-                    <td>5</td>
-                    <td>Obligatoria</td>
-                </tr>
-                <tr>
-                    <td>CS102</td>
-                    <td>Estructuras de Datos</td>
-                    <td>4</td>
-                    <td>2</td>
-                    <td>5</td>
-                    <td>Obligatoria</td>
-                </tr>
-            </tbody>
-        </table>
-        
+        <h3>Plan de estudios UC</h3>
+        <h3>Cursos</h3>
         </div>
     </div>
     
