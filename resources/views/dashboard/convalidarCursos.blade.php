@@ -3,146 +3,66 @@
 @section('title', 'Ventas Intermediadas')
 
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/convalidarCursosStyles.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/convalidarCursosStyle.css') }}">
 @endpush
 
 @section('main-content')
     <div class="convalidarcursosContainer">
-        <div class="firstRow">
-            <div class="searcherContainer">
-                <span class="material-symbols-outlined">search</span>
-                <div class="searcher">
-                    <input type="text" placeholder="Buscar DNI/Nombre de técnico o número de comprobante">
-                </div>
+        <div class="row">
+            <div class="col">
+              <h4>Postulante</h4>
+              <div class="input-select" id="postulanteSelect">
+                  <input type="text-autocomplete" placeholder="Ingresar nombre" onclick="toggleOptions('postulanteOptions')">
+                  <ul class="select-items" id="postulanteOptions">
+                    <li onclick="selectOption('77043114 - García Betancourt Josué Daniel')">77043114 - García Betancourt Josué Daniel</li>
+                    <li onclick="selectOption('12345678 - Perez Rivera Mario')">12345678 - Perez Rivera Mario</li>
+                  </ul>
+              </div>
+            </div>
+            <div class="col">
+              <h4>Institución</h4>
+              <select class="selectable">
+                <option value="UPLA">UPLA</option>
+                <option value="UNCP">UNCP</option>
+                <option value="UTP">UTP</option>
+              </select>
+            </div>
+            <div class="col">
+              <h4>Carrera Procedencia</h4>
+              <input type="text" placeholder="Ingresar carrera">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h4>Malla solicitada</h4>
+              <select class="selectable">
+                <option value="2015">2015</option>
+                <option value="2015">2018</option>
+                <option value="2015">2024</option>
+              </select>
+            </div>
+            <div class="col">
+              <h4>Carrera Destino</h4>
+              <select class="selectable">
+                <option value="103">103 - Ing. Sistemas e Informática</option>
+                <option value="103">105 - Ing. Civil</option>
+              </select>
             </div>
 
-            <div class="agregarNuevaVentaContainer">
-                <button class="btnAgregarNuevaVenta">
-                    Agregar nueva venta
-                    <span class="material-symbols-outlined">note_add</span>
-                </button>
+            <div class="col">
+              <button class="btnNuevoPostulante">
+                <span class="material-symbols-outlined">add</span>
+                Registrar nuevo postulante
+              </button>
             </div>
+          </div>
         </div>
-       
 
-        <div class="date">
-            <input type="date">
-        </div>
-
-        <div class="insights">
-
-            <!-- start seling -->
-            <div class="sales">
-                <span class="material-symbols-outlined">trending_up</span>
-                <div class="middle">
-
-                    <div class="left">
-                        <h3>Total Sales</h3>
-                        <h1>$25,024</h1>
-                    </div>
-                    <div class="progress">
-                        <svg>
-                            <circle r="30" cy="40" cx="40"></circle>
-                        </svg>
-                        <div class="number">
-                            <p>80%</p>
-                        </div>
-                    </div>
-
-                </div>
-                <small>Last 24 Hours</small>
-            </div>
-            <!-- end seling -->
-            <!-- start expenses -->
-            <div class="expenses">
-                <span class="material-symbols-outlined">local_mall</span>
-                <div class="middle">
-
-                    <div class="left">
-                        <h3>Total Sales</h3>
-                        <h1>$25,024</h1>
-                    </div>
-                    <div class="progress">
-                        <svg>
-                            <circle r="30" cy="40" cx="40"></circle>
-                        </svg>
-                        <div class="number">
-                            <p>80%</p>
-                        </div>
-                    </div>
-
-                </div>
-                <small>Last 24 Hours</small>
-            </div>
-            <!-- end seling -->
-            <!-- start seling -->
-            <div class="income">
-                <span class="material-symbols-outlined">stacked_line_chart</span>
-                <div class="middle">
-
-                    <div class="left">
-                        <h3>Total Sales</h3>
-                        <h1>$25,024</h1>
-                    </div>
-                    <div class="progress">
-                        <svg>
-                            <circle r="30" cy="40" cx="40"></circle>
-                        </svg>
-                        <div class="number">
-                            <p>80%</p>
-                        </div>
-                    </div>
-
-                </div>
-                <small>Last 24 Hours</small>
-            </div>
-            <!-- end seling -->
-
-        </div>
-        <!-- end insights -->
-        <div class="recent_order">
-            <h2>Lista de ventas intermediadas</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Product Name</th>
-                        <th>Product Number</th>
-                        <th>Payments</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Mini USB</td>
-                        <td>4563</td>
-                        <td>Due</td>
-                        <td class="warning">Pending</td>
-                        <td class="primary">Details</td>
-                    </tr>
-                    <tr>
-                        <td>Mini USB</td>
-                        <td>4563</td>
-                        <td>Due</td>
-                        <td class="warning">Pending</td>
-                        <td class="primary">Details</td>
-                    </tr>
-                    <tr>
-                        <td>Mini USB</td>
-                        <td>4563</td>
-                        <td>Due</td>
-                        <td class="warning">Pending</td>
-                        <td class="primary">Details</td>
-                    </tr>
-                    <tr>
-                        <td>Mini USB</td>
-                        <td>4563</td>
-                        <td>Due</td>
-                        <td class="warning">Pending</td>
-                        <td class="primary">Details</td>
-                    </tr>
-                </tbody>
-            </table>
-            <a href="#">Show All</a>
+        <div class="row">
+        <h3>Plan de estudios UC</h3>
+        <h3>Cursos</h3>
         </div>
     </div>
+    
+    <script src={{ asset('js/convalidarCursosScript.js') }}> </script>
 @endsection

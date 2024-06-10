@@ -1,0 +1,122 @@
+.convalidarcursosContainer {
+    margin-top: 1.4rem;
+    margin-left: 1rem;
+    margin-right: 2rem;
+    width: auto;
+}
+  
+.row {
+    display: flex;
+    justify-content: left;
+    gap: 2rem;
+    margin-bottom: 20px;
+}
+
+.col {
+    flex-basis: 30%;
+}
+
+h4 {
+    color: var(--clr-primary-variant2);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+p, select {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.selectable{
+    width: 100%;
+    padding: 5px;
+    border: 1.5px solid #EBEBEB;
+    border-radius: 23px 23px 23px;
+    transition: color 0.5s, border-color 0.5s; /* Animación de cambio de color y borde */
+}
+
+.selectable:focus {
+    color: var(--clr-primary-variant3); /* Color de texto al enfocar */
+    border-color: var(--clr-primary-variant3); /* Color del borde al enfocar */
+}
+
+.selectable:hover {
+    border-color: var(--clr-primary-variant3); /* Color del borde al enfocar */
+}
+
+input[type="text"] {
+    color: #666;
+}
+
+input[type="text-autocomplete"] {
+    color: #666;
+    cursor: pointer;
+}
+
+input::placeholder {
+    color: var(--clr-primary-variant3);
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    border: 1.5px solid #EBEBEB;
+    border-radius: 5px;
+    transition: color 0.5s, border-color 0.5s; /* Animación de cambio de color y borde */
+}
+
+input:focus {
+    color: var(--clr-primary-variant3); /* Color de texto al enfocar */
+    border-color: var(--clr-primary-variant3); /* Color del borde al enfocar */
+}
+
+input:hover {
+    border-color: var(--clr-primary-variant3); /* Color del borde al enfocar */
+}
+
+.input-select {
+    cursor: pointer;
+}
+
+/*Estilos para las listas desplegables*/
+.select-items {
+    position: absolute;
+    color: #666;
+    font-size: 0.8rem;
+    background-color: #fff;
+    border-top: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 999;
+    display: none; /* Oculta la lista de opciones por defecto */
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.1); /* Agrega una sombra */
+}
+
+.select-items li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Agrega una transición al cambiar el color de fondo */
+}
+
+.select-items li:hover {
+    background-color: #f0f0f0; /* Cambia el color de fondo al pasar el ratón */
+}
+
+.btnNuevoPostulante {
+    height: 3rem;
+    width: 8rem;
+    color: var(--clr-white);
+    background-color: #631878;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;
+}
+
+.btnNuevoPostulante:hover {
+    background-color: #823b96;
+}

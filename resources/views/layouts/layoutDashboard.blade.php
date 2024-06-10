@@ -70,7 +70,7 @@
                   <img src="./images/profile_picture.png" alt="admin@continental_picture"/>
                 </div>
                 <select class="userList" id="IDUserList">
-                    <option value="opcion1">Opción 1</option>
+                    <option value="opcion1">Admin</option>
                     <option value="opcion2">Opción 2</option>
                     <option value="opcion3">Opción 3</option>
                 </select>
