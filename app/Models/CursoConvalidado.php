@@ -15,15 +15,17 @@ class CursoConvalidado extends Model
 
     protected $fillable = [
         'idCursoPostulante',
+        'anioMallaCursoPostulante',
         'nombreCursoPostulante',
         'idCursoLocal',
+        'idAnioMallaCursoLocal',
         'nombreCursoLocal',
         'porcentajeSimilitud',
-        'anioMallaSolicitada',
+        'anioMallaSolicitada', 
     ];
 
     public function cursos()
     {
-        return $this->belongsTo(Curso::class, 'idCurso');
+        return $this->belongsTo(Curso::class, 'idCursoLocal', 'idCurso');
     }
 }

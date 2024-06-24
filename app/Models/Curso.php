@@ -27,8 +27,6 @@ class Curso extends Model
         'caracterCurso',
         'sumillaSilabo_Curso',
         'estadoCurso',
-        'cursoEmparejado',
-        'porcentajeSimilitud',
         'rutaSilaboPDF_Curso',
     ];
 
@@ -37,7 +35,11 @@ class Curso extends Model
         return $this->hasMany('App\Models\CarreraLocal_Curso');
     } 
 
-     public function postulantesCursos() {
+    public function cursosConvalidados() {
+        return $this->hasMany('App\Models\CursoConvalidado');
+    } 
+
+    public function postulantesCursos() {
         return $this->hasMany('App\Models\PostulanteCurso');
     } 
 }

@@ -19,7 +19,7 @@ return new class extends Migration
 
             $table->string('tipoCurso', 10); // Local o Postulante  
             $table->unsignedInteger('periodoCurso')->nullable(); // 4
-            $table->string('nombreCurso', 100); //Fundamentos de programación
+            $table->string('nombreCurso'); //Fundamentos de programación
             $table->unsignedInteger('horasTeoricasCurso')->default(0); // 2
             $table->unsignedInteger('horasPracticasCurso')->default(0); // 2
             $table->unsignedInteger('creditosCurso')->default(0);// 3
@@ -29,7 +29,7 @@ return new class extends Migration
             //Esto significa que ya no se volverá a procesar con Deep Learning si es 0
             //Para hallar el valor de estadoCurso se necesita comprobar que el curso postulante
             //no tenga cursos convalidados en la tabla CursosConvalidados
-            
+            // $table->string('cursoEmparejado')->nullable(); 
             $table->text('rutaSilaboPDF_Curso')->nullable(); //Al crear un curso puede ser nula la ruta de silabo
             $table->timestamps(); //created_at updated_at
         });
