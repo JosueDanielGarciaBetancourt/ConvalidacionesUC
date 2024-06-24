@@ -18,28 +18,26 @@
             </div>
 
             <div class="sidebar">
-                <a href="#"  class="active">
+                <a href="{{ route('convalidarCursos') }}" class="{{ Request::routeIs('convalidarCursos') ? 'active' : '' }}">
                     <span class="material-symbols-outlined">task</span>
                     <h6>Convalidar cursos</h6>
                 </a>
-                <a href="#">
+                <a href="{{ route('historialConvalidaciones') }}" class="{{ Request::routeIs('historialConvalidaciones') ? 'active' : '' }}">
                     <span class="material-symbols-outlined">note_stack</span>
                     <h6>Historial de convalidaciones</h6>
                 </a>
-
                 <div class="list_item">
-                    <a href="#" class="list_button--click">
+                    <a href="#" class="list_button--click {{ Request::routeIs('postulantesRegistrar', 'postulantesRegistrar.create', 'postulantesVisualizar') ? 'active' : '' }}">
                         <span class="material-symbols-outlined">groups</span>
                         <h6>Postulantes</h6>
                         <span class="material-symbols-outlined" id="list_arrow">keyboard_arrow_down</span>
                     </a>
-    
-                    <ul class="list_show">
-                        <li class="list_inside">
-                            <a href="#" class="sidebar--inside no-active">• Registrar postulante</a>
+                    <ul class="list_show ">
+                        <li class="list_inside {{ Request::routeIs('postulantesRegistrar.create') ? 'active-text' : '' }}">
+                            <a href="{{ route('postulantesRegistrar.create') }}" class="sidebar--inside">• Registrar postulante</a>
                         </li>
-                        <li class="list_inside">
-                            <a href="#" class="sidebar--inside no-active">• Ver lista de postulantes</a>
+                        <li class="list_inside {{ Request::routeIs('postulantesVisualizar') ? 'active-text' : '' }}">
+                            <a href="{{ route('postulantesVisualizar') }}" class="sidebar--inside">• Ver lista de postulantes</a>
                         </li>
                     </ul>
                 </div>
@@ -83,5 +81,5 @@
         </div>
     </div>
 
-    <script src={{ asset('js/dashboardScrip.js') }}> </script>
+    <script src="{{ asset('js/dashboardScriptss.js') }}"> </script>
 @endsection

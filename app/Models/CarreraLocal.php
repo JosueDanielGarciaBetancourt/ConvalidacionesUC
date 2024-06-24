@@ -14,4 +14,9 @@ class CarreraLocal extends Model
     protected $primaryKey = 'idCarreraLocal';
 
     protected $fillable = ['idCarreraLocal', 'nombreCarreraLocal'];
+
+    // Relación de uno a muchos
+    public function carreraslocalesCursos() {
+        return $this->hasMany('App\Models\CarreraLocal_Curso');
+    } 
 }

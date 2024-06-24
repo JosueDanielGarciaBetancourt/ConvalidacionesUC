@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -8,18 +9,16 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('Postulantes_CursosPostulantes', function (Blueprint $table) {
+        Schema::create('Postulantes_Cursos', function (Blueprint $table) {
+            $table->id('idPostulanteCurso')->primary();
             $table->string('idPostulante', 8); //77043114
-            $table->string('idCursoPostulante', 15); //curso123
+            $table->string('idCurso', 9); //ASUC00316
            
-            // Estableciendo la clave primaria compuesta
-            $table->primary(['idPostulante', 'idCursoPostulante']);
-
             $table->foreign('idPostulante')
                     ->references('idPostulante')->on('Postulantes')
                     ->onDelete('cascade');
-            $table->foreign('idCursoPostulante')
-                    ->references('idCursoPostulante')->on('CursosPostulantes')
+            $table->foreign('idCurso')
+                    ->references('idCurso')->on('Cursos')
                     ->onDelete('cascade');
 
             $table->timestamps(); //created_at updated_at
@@ -28,6 +27,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('Postulantes_CursosPostulantes');
+        Schema::dropIfExists('Postulantes_Cursos');
     }
 };

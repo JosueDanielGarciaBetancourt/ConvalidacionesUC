@@ -15,10 +15,18 @@ class Postulante extends Model
     protected $primaryKey = 'idPostulante';
 
     protected $fillable = [
+        'idPostulante',
         'nombrePostulante',
         'carreraProcedenciaPostulante',
         'institucionProcedenciaPostulante',
     ];
 
-    public $timestamps = true;
+    // Relación de uno a muchos
+    public function postulantesCursos() {
+        return $this->hasMany('App\Models\PostulanteCurso');
+    }   
+
+    public function reportesconvalidaciones() {
+        return $this->hasMany('App\Models\ReporteConvalidacion');
+    }
 }

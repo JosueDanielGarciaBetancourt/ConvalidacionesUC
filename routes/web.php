@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostulanteRegistrarController;
 
 //Login
 Route::get('/', [AuthenticatedSessionController::class, 'create'])->name('/');
@@ -18,7 +19,8 @@ Route::middleware('auth')->group(function () {
    
     Route::get('/dashboard-convalidarCursos', [DashboardController::class, 'convalidarCursos'])->name('convalidarCursos');
     Route::get('/dashboard-historialConvalidaciones', [DashboardController::class, 'historialConvalidaciones'])->name('historialConvalidaciones');  
-    Route::get('/dashboard-postulantesRegistrar', [DashboardController::class, 'postulantesRegistrar'])->name('postulantesRegistrar');  
+    Route::get('/dashboard-postulantesRegistrar', [PostulanteRegistrarController::class, 'create'])->name('postulantesRegistrar.create');
+    Route::post('/dashboard-postulantesRegistrar', [PostulanteRegistrarController::class, 'store'])->name('postulantesRegistrar.store');
     Route::get('/dashboard-postulantesVisualizar', [DashboardController::class, 'postulantesVisualizar'])->name('postulantesVisualizar');  
 });
 

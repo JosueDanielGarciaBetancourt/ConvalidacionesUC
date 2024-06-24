@@ -9,15 +9,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ReportesConvalidaciones', function (Blueprint $table) {
-            $table->string('idReporteConvalidacion', 23)->primary(); //0001-77043114-Malla2018
+            $table->id(); 
+            //En el controlador se manejará la lógica para generar
+            //un idReporteConvalidacion autoincremental
+            $table->string('idReporteConvalidacion')->unique(); //0001-77043114-Malla2015
             $table->string('idPostulante', 8)->nullable(); //77043114
-            $table->string('idMalla', 10)->nullable(); //Malla2018
-            
-            $table->foreign('idPostulante')->references('idPostulante')->on('Postulantes')->onDelete('set null');
-            $table->foreign('idMalla')->references('idMalla')->on('Mallas')->onDelete('set null');
+            $table->string('anioMalla', 10); //2015
+            $table->datetime('fechaHoraReporteConvalidacion')->default(now()); 
+            $table->text('rutaArchivoPDF'); //../ReportesPDF/0001-77043114-2015.pdf
 
-            $table->datetime('fechaHoraReporteConvalidacion')->default(now()); // Corrección aquí
-            $table->text('rutaArchivoPDF');
+            $table->foreign('idPostulante')->references('idPostulante')->on('Postulantes')->onDelete('set null');
+            $table->timestamps();
         });
     }
 

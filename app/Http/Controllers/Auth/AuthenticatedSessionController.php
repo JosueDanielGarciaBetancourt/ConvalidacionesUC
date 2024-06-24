@@ -26,7 +26,6 @@ class AuthenticatedSessionController extends Controller
             if (Auth::attempt($credentials, $remember)) {
                 $request->session()->regenerate();
 
-                // Ensure the redirection URL is safe
                 $intendedUrl = $request->session()->pull('url.intended', route('convalidarCursos'));
                 return redirect()->to($intendedUrl);
             }

@@ -9,7 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('Postulantes', function (Blueprint $table) {
-            $table->string('idPostulante', 8)->primary(); //8 caracteres máximo
+            $table->string('idPostulante', 8)->primary(); // 77043114
             $table->string('nombrePostulante', 100); //100 caracteres máximo
             $table->string('carreraProcedenciaPostulante', 100); //100 caracteres máximo
             $table->string('institucionProcedenciaPostulante', 100); //100 caracteres máximo
