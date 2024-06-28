@@ -5,17 +5,17 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
 
 class UserSeeder extends Seeder
 {
     public function run(): void
-    {
-        $user1 = new User;
-        $user1->name = 'Admin'; 
-        $user1->email = "admin@continental.edu.pe";
-        $user1->email_verified_at = now();
-        $user1->password = bcrypt("123");
-        
-        $user1->save();
+    {   
+        User::create([
+            'name' => 'Admin',
+            'email' => 'admin@continental.edu.pe',
+            'password' => Hash::make('12345678'),
+        ]);
     }
 }

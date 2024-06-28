@@ -45,6 +45,15 @@ body{
 	--card-padding: 1.8rem;
 	--padding-1: 1.2rem;
 	--box-shadow: 0 2rem 3rem var(--clr-light);
+
+	/*Table Root*/
+	--dt-row-selected: 0, 123, 255;
+	--dt-row-selected-text: 255, 255, 255;
+	--dt-row-selected-link: 9, 10, 11;
+	--dt-row-stripe: 0, 0, 0;
+	--dt-row-hover: 248, 249, 250;
+	--dt-column-ordering: 0, 0, 0;
+	--dt-html-background: white;
 }
 
 /* dark theme */

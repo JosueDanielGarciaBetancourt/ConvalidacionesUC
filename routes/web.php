@@ -6,11 +6,12 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostulanteRegistrarController;
 
-//Login
-Route::get('/', [AuthenticatedSessionController::class, 'create'])->name('/');
-Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
-Route::post('/validar-login', [AuthenticatedSessionController::class, 'store'])->name('loginPost'); 
-Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+/*Login
+//Route::get('/', [AuthenticatedSessionController::class, 'create'])->name('/');
+//Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
+//Route::post('/validar-login', [AuthenticatedSessionController::class, 'store'])->name('loginPost'); 
+//Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+*/
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -15,12 +15,12 @@ class PostulanteRegistrarController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'idPostulante' => 'required|string|max:255',
+            'idPostulante' => 'required|digits:8',
             'nombrePostulante' => 'required|string|max:255',
             'carreraProcedenciaPostulante' => 'required|string|max:255',
             'institucionProcedenciaPostulante' => 'required|string|max:255',
         ]);
-
+        
         $postulante = new Postulante();
         $postulante->idPostulante = $request->idPostulante;
         $postulante->nombrePostulante = $request->nombrePostulante;

@@ -1,6 +1,5 @@
 .convalidarcursosContainer {
     margin-top: 1.4rem;
-    margin-left: 1rem;
     margin-right: 2rem;
     width: auto;
 }
@@ -8,18 +7,24 @@
 .row {
     display: flex;
     justify-content: left;
-    gap: 2rem;
-    margin-bottom: 20px;
+    gap: 3rem;
+    margin-bottom: 1rem;
+}
+
+.row1 {
+    display: flex;
+    justify-content: left;
+    gap: 3rem;
 }
 
 .col {
-    flex-basis: 30%;
+    flex-basis: 40%;
+    margin-left: 1rem;
 }
 
 h4 {
     color: var(--clr-primary-variant2);
     font-weight: 600;
-    margin-bottom: 5px;
 }
 
 p, select {
@@ -137,28 +142,4 @@ input:hover {
     background-color: #823b96;
 }
 
-/*Estilos de tabla*/
-/* Estilos para la tabla */
-table {
-    width: 100%; /* Haz que la tabla ocupe todo el ancho del contenedor */
-    border-collapse: collapse; /* Fusiona los bordes de las celdas */
-    margin: 1.5rem 2rem 0 1rem;
-}
-
-/* Estilos para las celdas de la tabla */
-table, th, td {
-    border: 1px solid #ccc; /* Agrega bordes a las celdas */
-    padding: 8px; /* Agrega un espacio interno a las celdas */
-}
-
-/* Estilos para el encabezado de la tabla */
-th {
-    background-color: #f2f2f2; /* Color de fondo del encabezado */
-    font-weight: bold; /* Hace que el texto del encabezado sea negrita */
-}
-
-/* Estilos para las filas impares de la tabla */
-tr:nth-child(odd) {
-    background-color: #f9f9f9; /* Color de fondo de las filas impares */
-}
 
